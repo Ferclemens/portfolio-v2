@@ -7,20 +7,19 @@ import { TypeAnimation } from "react-type-animation";
 export default function Intro() {
   return (
     <motion.section
-      className="flex items-center justify-center my-32 mx-10 flex-col-reverse sm:flex-row"
+      className="flex items-center justify-center my-32 mx-7 flex-col-reverse sm:flex-row sm:mx-10 sm:my-[4.3rem] lg:my-20"
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
     >
-      <div className="bg-gray-800 rounded-full my-10">
-        <Image
-          src="/avatar.png"
-          alt="personal image to presentation"
-          width={300}
-          height={300}
-        />
-      </div>
-      <div className="text-gray-600 flex flex-col sm:pl-16">
-        <h1 className="text-4xl font-bold sm:text-6xl leading-[3rem] pt-6 sm:pt-0">
+      <Image
+        src="/avatar.png"
+        alt="personal image to presentation"
+        width={300}
+        height={300}
+        className="pt-10 sm:p-4 lg:p-0"
+      />
+      <div className="text-gray-600 flex flex-col sm:p-4 lg:p-16">
+        <h1 className="text-4xl lg:text-6xl font-bold">
           Hello! I'm <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-400">
             <TypeAnimation
@@ -37,10 +36,37 @@ export default function Intro() {
             />
           </span>
         </h1>
-        <p className="text-lg sm:text-xl pt-10 max-w-lg">
+        <p className="text-lg sm:text-xl py-7 sm:py-5 lg:py-8 max-w-lg">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia fugiat
           ipsum!
         </p>
+        <div className="flex justify-between  items-center text-center">
+          <button className="p-3 w-22 sm:w-28 lg:w-40 bg-gradient-to-tr from-blue-500 to-teal-400 rounded-full font-bold text-xs sm:text-sm lg:text-lg text-slate-200">
+            Contact Me!
+          </button>
+          <a
+            href=""
+            className="p-3 w-22 sm:w-28 lg:w-40 bg-gradient-to-tr from-blue-500 to-teal-400 rounded-full font-bold text-xs sm:text-sm lg:text-lg text-slate-200"
+          >
+            Dowload CV
+          </a>
+          <a href="https://www.linkedin.com/in/foclemens/" target="_blank">
+            <Image
+              src="/linkedin-logo.webp"
+              alt="LinkedIn logo"
+              width={30}
+              height={30}
+            />
+          </a>
+          <a href="https://github.com/Ferclemens" target="_blank">
+            <Image
+              src="/github-mark.svg"
+              alt="GitHub logo"
+              width={32}
+              height={32}
+            />
+          </a>
+        </div>
       </div>
     </motion.section>
   );
