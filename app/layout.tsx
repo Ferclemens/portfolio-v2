@@ -18,8 +18,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} bg-gray-100 text-gray-950`}>
-        <div className="bg-blue-500 absolute top-14 left-14 h-52 w-52 rounded-full blur-[10rem]"></div>
-        <div className="bg-teal-400 absolute bottom-0 right-4 h-52 w-52 rounded-full blur-[10rem]"></div>
+        <div className="bg-blue-500 absolute top-14 left-14 h-52 w-52 rounded-full blur-[10rem] z-[-1]"></div>
+        <div className="bg-teal-400 absolute bottom-0 right-4 h-52 w-52 rounded-full blur-[10rem] z-[-1]"></div>
         <Header />
         {children}
       </body>
