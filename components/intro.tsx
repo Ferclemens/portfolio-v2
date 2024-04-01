@@ -3,11 +3,14 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
+import { BsArrowRight } from "react-icons/bs";
+import Link from "next/link";
+import { HiDownload } from "react-icons/hi";
 
 export default function Intro() {
   return (
     <motion.section
-      className="flex items-center justify-center my-32 mx-7 flex-col-reverse sm:flex-row sm:mx-10 sm:my-[4.3rem] lg:my-20"
+      className="flex items-center justify-center py-40 mx-7 flex-col-reverse sm:flex-row sm:mx-10 sm:py-20 lg:py-24"
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
     >
@@ -16,9 +19,9 @@ export default function Intro() {
         alt="personal image to presentation"
         width={300}
         height={300}
-        className="pt-10 sm:p-4 lg:p-0"
+        className="pt-24 sm:p-4 lg:p-0"
       />
-      <div className="text-gray-600 flex flex-col sm:p-4 lg:p-16">
+      <div className="text-gray-700 flex flex-col sm:p-4 lg:p-16">
         <h1 className="text-4xl lg:text-6xl font-bold">
           Hello! I'm <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-400">
@@ -40,15 +43,19 @@ export default function Intro() {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia fugiat
           ipsum!
         </p>
-        <div className="flex justify-between  items-center text-center">
-          <button className="p-3 w-22 sm:w-28 lg:w-40 bg-gradient-to-tr from-blue-500 to-teal-400 rounded-full font-bold text-xs sm:text-sm lg:text-lg text-slate-200">
-            Contact Me!
-          </button>
-          <a
-            href=""
-            className="p-3 w-22 sm:w-28 lg:w-40 bg-gradient-to-tr from-blue-500 to-teal-400 rounded-full font-bold text-xs sm:text-sm lg:text-lg text-slate-200"
+        <div className="flex justify-between  items-center text-center sm:max-w-[28rem] lg:max-w-[30rem]">
+          <Link
+            href="#contact"
+            className="flex items-center justify-center gap-2 p-3 w-30 sm:w-36 lg:w-40 bg-[#21414d] rounded-full text-xs sm:text-sm lg:text-lg text-slate-200 hover:scale-110 transition"
           >
-            Dowload CV
+            Contact Me <BsArrowRight className="" />
+          </Link>
+          <a
+            href="/ferclemens-cv.pdf"
+            download
+            className="flex items-center justify-center gap-2 p-3 w-30 sm:w-36 lg:w-40 bg-gray-600 rounded-full text-xs sm:text-sm lg:text-lg text-white hover:scale-110 transition"
+          >
+            Dowload CV <HiDownload className="" />
           </a>
           <a href="https://www.linkedin.com/in/foclemens/" target="_blank">
             <Image
@@ -56,6 +63,7 @@ export default function Intro() {
               alt="LinkedIn logo"
               width={30}
               height={30}
+              className="hover:scale-110 transition"
             />
           </a>
           <a href="https://github.com/Ferclemens" target="_blank">
@@ -64,6 +72,7 @@ export default function Intro() {
               alt="GitHub logo"
               width={32}
               height={32}
+              className="hover:scale-125 transition"
             />
           </a>
         </div>
