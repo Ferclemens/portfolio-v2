@@ -23,7 +23,7 @@ export default function Header() {
               initial={{ y: -100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
             >
-              <Link
+              <a
                 className={clsx(
                   "flex w-full items-center justify-center p-3 transition",
                   { "text-white": activeSection === link.name }
@@ -43,7 +43,7 @@ export default function Header() {
                     }}
                   ></motion.span>
                 )}
-              </Link>
+              </a>
             </motion.li>
           ))}
         </ul>
