@@ -9,21 +9,35 @@ import { HiDownload } from "react-icons/hi";
 
 export default function Intro() {
   return (
-    <motion.section
+    <section
       className="flex items-center justify-center py-32 mx-7 flex-col-reverse sm:flex-row sm:mx-10 sm:py-20 lg:py-24"
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ delay: 0.17 }}
       id="home"
     >
-      <Image
-        src="/avatar.png"
-        alt="Cartoon image to presentation"
-        width={300}
-        height={300}
-        className="pt-10 sm:p-4 lg:p-0"
-      />
-      <div className="text-gray-700 flex flex-col sm:p-4 lg:p-16">
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          type: "tween",
+          duration: 0.2,
+        }}
+      >
+        <Image
+          src="/avatar.png"
+          alt="Cartoon image to presentation"
+          width={300}
+          height={300}
+          className="pt-10 sm:p-4 lg:p-0"
+        />
+      </motion.div>
+      <motion.div
+        className="text-gray-700 flex flex-col sm:p-4 lg:p-8"
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          type: "tween",
+          duration: 0.2,
+        }}
+      >
         <h1 className="text-4xl lg:text-6xl font-bold">
           Hello! I'm <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-400">
@@ -78,7 +92,7 @@ export default function Intro() {
             />
           </a>
         </div>
-      </div>
-    </motion.section>
+      </motion.div>
+    </section>
   );
 }
