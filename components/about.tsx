@@ -7,7 +7,7 @@ export default function About() {
   return (
     <motion.section
       id="about"
-      className="flex items-center justify-center scroll-mt-40 pb-32  mx-7 sm:mx-10 sm:scroll-mt-20 lg:py-24"
+      className="flex items-center justify-center scroll-mt-40 pb-32  mx-7 sm:mx-10 sm:scroll-mt-20 lg:my-32 lg:scroll-mt-32"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.17 }}
