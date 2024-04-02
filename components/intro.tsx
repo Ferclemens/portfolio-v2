@@ -10,16 +10,18 @@ import { HiDownload } from "react-icons/hi";
 export default function Intro() {
   return (
     <motion.section
-      className="flex items-center justify-center py-40 mx-7 flex-col-reverse sm:flex-row sm:mx-10 sm:py-20 lg:py-24"
+      className="flex items-center justify-center py-32 mx-7 flex-col-reverse sm:flex-row sm:mx-10 sm:py-20 lg:py-24"
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
+      transition={{ delay: 0.17 }}
+      id="home"
     >
       <Image
         src="/avatar.png"
-        alt="personal image to presentation"
+        alt="Cartoon image to presentation"
         width={300}
         height={300}
-        className="pt-24 sm:p-4 lg:p-0"
+        className="pt-10 sm:p-4 lg:p-0"
       />
       <div className="text-gray-700 flex flex-col sm:p-4 lg:p-16">
         <h1 className="text-4xl lg:text-6xl font-bold">
@@ -46,7 +48,7 @@ export default function Intro() {
         <div className="flex justify-between  items-center text-center sm:max-w-[28rem] lg:max-w-[30rem]">
           <Link
             href="#contact"
-            className="flex items-center justify-center gap-2 p-3 w-30 sm:w-36 lg:w-40 bg-[#21414d] rounded-full text-xs sm:text-sm lg:text-lg text-slate-200 hover:scale-110 transition"
+            className="flex items-center justify-center gap-2 p-3 w-30 sm:w-36 lg:w-40 bg-[#21414d] rounded-full text-xs sm:text-sm lg:text-lg text-white hover:scale-110 transition"
           >
             Contact Me <BsArrowRight className="" />
           </Link>
