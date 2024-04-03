@@ -8,10 +8,13 @@ import { useScroll, motion } from "framer-motion";
 export default function Projects() {
   return (
     <section
-      className="flex flex-col justify-center items-center scroll-mt-40 pb-56  mx-7 sm:mx-10 sm:scroll-mt-28 lg:my-32 lg:scroll-mt-32"
+      className="flex flex-col justify-center items-center scroll-mt-40 mx-7 sm:mx-10  sm:my-28 lg:scroll-mt-32"
       id="projects"
     >
       <SectionHeading>Projects</SectionHeading>
+      <p className="text-lg sm:text-xl text-center pb-8">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      </p>
       <div className="flex flex-col gap-y-3">
         {projectsData.map((project, index) => (
           <React.Fragment key={index}>
@@ -46,7 +49,7 @@ function Project({ title, description, tags, imageUrl }: ProjectProps) {
           {tags.map((tag, index) => {
             return (
               <li
-                className="bg-black/[0.7] px-3 py-2 text-[0.8rem] tracking-wider text-white rounded-full"
+                className="bg-gray-500 px-3 py-2 text-[0.8rem] tracking-wider text-white rounded-full"
                 key={index}
               >
                 {tag}

@@ -59,17 +59,17 @@ export default function Intro() {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia fugiat
           ipsum!
         </p>
-        <div className="flex justify-between  items-center text-center sm:max-w-[28rem] lg:max-w-[30rem]">
+        <div className="flex gap-1 sm:gap-3 lg:gap-4  items-center text-center sm:max-w-[28rem] lg:max-w-[30rem]">
           <Link
             href="#contact"
-            className="flex items-center justify-center gap-2 p-3 w-30 sm:w-36 lg:w-40 bg-[#21414d] rounded-full text-xs sm:text-sm lg:text-lg text-white hover:scale-110 transition"
+            className="flex items-center justify-center gap-2 p-2 w-30 sm:w-36 lg:w-40 bg-[#21414d] rounded-full text-xs sm:text-sm lg:text-lg text-white hover:scale-105 transition"
           >
             Contact Me <BsArrowRight className="" />
           </Link>
           <a
             href="/ferclemens-cv.pdf"
             download
-            className="flex items-center justify-center gap-2 p-3 w-30 sm:w-36 lg:w-40 bg-gray-600 rounded-full text-xs sm:text-sm lg:text-lg text-white hover:scale-110 transition"
+            className="flex items-center justify-center gap-2 p-2 w-30 sm:w-36 lg:w-40 bg-gray-500 rounded-full text-xs sm:text-sm lg:text-lg text-white hover:scale-105 transition"
           >
             Dowload CV <HiDownload className="" />
           </a>
