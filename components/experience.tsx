@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -7,10 +7,28 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import SectionHeading from "./section-heading";
 import { experiencesData } from "@/lib/data";
+import { useActiveSectionContext } from "@/context/active-section-context";
+import { useInView } from "react-intersection-observer";
 
 export default function Experience() {
+  const { activeSection, setActiveSection, lastClickTime, setlastClickTime } =
+    useActiveSectionContext();
+
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+  });
+
+  useEffect(() => {
+    if (inView && Date.now() - lastClickTime > 1000) {
+      setActiveSection("Experience");
+    }
+  }, [inView, setActiveSection, lastClickTime]);
   return (
-    <section id="experience" className="scroll-mt-40 mx-7 my-32 sm:mx-10">
+    <section
+      ref={ref}
+      id="experience"
+      className="scroll-mt-40 mx-7 my-32 sm:mx-10"
+    >
       <SectionHeading>Experience</SectionHeading>
       <div>
         <VerticalTimeline layout={"2-columns"} animate={true} lineColor={""}>

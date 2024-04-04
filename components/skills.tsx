@@ -1,10 +1,25 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import SectionHeading from "./section-heading";
 import { skillsData } from "@/lib/data";
 import { motion } from "framer-motion";
+import { useActiveSectionContext } from "@/context/active-section-context";
+import { useInView } from "react-intersection-observer";
 
 export default function Skills() {
+  const { activeSection, setActiveSection, lastClickTime, setlastClickTime } =
+    useActiveSectionContext();
+
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+  });
+
+  useEffect(() => {
+    if (inView && Date.now() - lastClickTime > 1000) {
+      setActiveSection("Skills");
+    }
+  }, [inView, setActiveSection, lastClickTime]);
+
   const fadeInAnimationVariants = {
     initial: {
       opacity: 0,
@@ -20,6 +35,7 @@ export default function Skills() {
   };
   return (
     <section
+      ref={ref}
       id="skills"
       className="flex flex-col justify-center items-center scroll-mt-40 mx-7 my-32 sm:mx-10"
     >

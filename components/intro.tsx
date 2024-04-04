@@ -1,15 +1,30 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import { BsArrowRight } from "react-icons/bs";
 import Link from "next/link";
 import { HiDownload } from "react-icons/hi";
+import { useActiveSectionContext } from "@/context/active-section-context";
+import { useInView } from "react-intersection-observer";
 
 export default function Intro() {
+  const { activeSection, setActiveSection, lastClickTime, setlastClickTime } =
+    useActiveSectionContext();
+
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+  });
+
+  useEffect(() => {
+    if (inView && Date.now() - lastClickTime > 1000) {
+      setActiveSection("Home");
+    }
+  }, [inView, setActiveSection, lastClickTime]);
   return (
     <section
+      ref={ref}
       className="flex items-center justify-center py-32 mx-7 flex-col-reverse sm:flex-row sm:mx-10 sm:py-20 lg:py-24"
       id="home"
     >

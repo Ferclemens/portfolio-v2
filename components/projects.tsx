@@ -1,13 +1,28 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import SectionHeading from "./section-heading";
 import { projectsData } from "@/lib/data";
 import Image from "next/image";
 import { useScroll, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useActiveSectionContext } from "@/context/active-section-context";
 
 export default function Projects() {
+  const { activeSection, setActiveSection, lastClickTime, setlastClickTime } =
+    useActiveSectionContext();
+
+  const { ref, inView } = useInView({
+    threshold: 0.2,
+  });
+
+  useEffect(() => {
+    if (inView && Date.now() - lastClickTime > 1000) {
+      setActiveSection("Projects");
+    }
+  }, [inView, setActiveSection, lastClickTime]);
   return (
     <section
+      ref={ref}
       className="flex flex-col justify-center items-center scroll-mt-40 mx-7 sm:mx-10  sm:my-28 lg:scroll-mt-32"
       id="projects"
     >
