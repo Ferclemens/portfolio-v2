@@ -11,6 +11,7 @@ import { useInView } from "react-intersection-observer";
 import { useSectionInView } from "@/lib/hooks";
 
 export default function Intro() {
+  const { setlastClickTime, setActiveSection } = useActiveSectionContext();
   const { ref } = useSectionInView("Home");
   return (
     <section
@@ -68,6 +69,10 @@ export default function Intro() {
           <Link
             href="#contact"
             className="flex items-center justify-center gap-2 p-2 w-30 sm:w-36 lg:w-40 bg-[#21414d] rounded-full text-xs sm:text-sm lg:text-lg text-white hover:scale-105 transition"
+            onClick={() => {
+              setlastClickTime(Date.now());
+              setActiveSection("Contact");
+            }}
           >
             Contact Me <BsArrowRight className="" />
           </Link>
