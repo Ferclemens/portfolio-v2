@@ -6,20 +6,10 @@ import Image from "next/image";
 import { useScroll, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useActiveSectionContext } from "@/context/active-section-context";
+import { useSectionInView } from "@/lib/hooks";
 
 export default function Projects() {
-  const { activeSection, setActiveSection, lastClickTime, setlastClickTime } =
-    useActiveSectionContext();
-
-  const { ref, inView } = useInView({
-    threshold: 0.2,
-  });
-
-  useEffect(() => {
-    if (inView && Date.now() - lastClickTime > 1000) {
-      setActiveSection("Projects");
-    }
-  }, [inView, setActiveSection, lastClickTime]);
+  const { ref } = useSectionInView("Projects");
   return (
     <section
       ref={ref}

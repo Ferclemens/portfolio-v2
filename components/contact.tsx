@@ -4,20 +4,10 @@ import SectionHeading from "./section-heading";
 import { FaPaperPlane } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
 import { useActiveSectionContext } from "@/context/active-section-context";
+import { useSectionInView } from "@/lib/hooks";
 
 export default function Contact() {
-  const { activeSection, setActiveSection, lastClickTime, setlastClickTime } =
-    useActiveSectionContext();
-
-  const { ref, inView } = useInView({
-    threshold: 0.5,
-  });
-
-  useEffect(() => {
-    if (inView && Date.now() - lastClickTime > 1000) {
-      setActiveSection("Contact");
-    }
-  }, [inView, setActiveSection, lastClickTime]);
+  const { ref } = useSectionInView("Contact");
 
   return (
     <section

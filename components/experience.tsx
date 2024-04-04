@@ -9,20 +9,10 @@ import SectionHeading from "./section-heading";
 import { experiencesData } from "@/lib/data";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { useInView } from "react-intersection-observer";
+import { useSectionInView } from "@/lib/hooks";
 
 export default function Experience() {
-  const { activeSection, setActiveSection, lastClickTime, setlastClickTime } =
-    useActiveSectionContext();
-
-  const { ref, inView } = useInView({
-    threshold: 0.5,
-  });
-
-  useEffect(() => {
-    if (inView && Date.now() - lastClickTime > 1000) {
-      setActiveSection("Experience");
-    }
-  }, [inView, setActiveSection, lastClickTime]);
+  const { ref } = useSectionInView("Experience");
   return (
     <section
       ref={ref}
