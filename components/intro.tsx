@@ -1,15 +1,21 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import { BsArrowRight } from "react-icons/bs";
 import Link from "next/link";
 import { HiDownload } from "react-icons/hi";
+import { useActiveSectionContext } from "@/context/active-section-context";
+import { useInView } from "react-intersection-observer";
+import { useSectionInView } from "@/lib/hooks";
 
 export default function Intro() {
+  const { setlastClickTime, setActiveSection } = useActiveSectionContext();
+  const { ref } = useSectionInView("Home");
   return (
     <section
+      ref={ref}
       className="flex items-center justify-center py-32 mx-7 flex-col-reverse sm:flex-row sm:mx-10 sm:py-20 lg:py-24"
       id="home"
     >
@@ -59,17 +65,21 @@ export default function Intro() {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia fugiat
           ipsum!
         </p>
-        <div className="flex justify-between  items-center text-center sm:max-w-[28rem] lg:max-w-[30rem]">
+        <div className="flex gap-1 sm:gap-3 lg:gap-4  items-center text-center sm:max-w-[28rem] lg:max-w-[30rem]">
           <Link
             href="#contact"
-            className="flex items-center justify-center gap-2 p-3 w-30 sm:w-36 lg:w-40 bg-[#21414d] rounded-full text-xs sm:text-sm lg:text-lg text-white hover:scale-110 transition"
+            className="flex items-center justify-center gap-2 p-2 w-30 sm:w-36 lg:w-40 bg-[#21414d] rounded-full text-xs sm:text-sm lg:text-lg text-white hover:scale-105 transition"
+            onClick={() => {
+              setlastClickTime(Date.now());
+              setActiveSection("Contact");
+            }}
           >
             Contact Me <BsArrowRight className="" />
           </Link>
           <a
             href="/ferclemens-cv.pdf"
             download
-            className="flex items-center justify-center gap-2 p-3 w-30 sm:w-36 lg:w-40 bg-gray-600 rounded-full text-xs sm:text-sm lg:text-lg text-white hover:scale-110 transition"
+            className="flex items-center justify-center gap-2 p-2 w-30 sm:w-36 lg:w-40 bg-gray-500 rounded-full text-xs sm:text-sm lg:text-lg text-white hover:scale-105 transition"
           >
             Dowload CV <HiDownload className="" />
           </a>

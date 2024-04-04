@@ -1,12 +1,13 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { links } from "@/lib/data";
-import Link from "next/link";
 import clsx from "clsx";
+import { useActiveSectionContext } from "@/context/active-section-context";
 
 export default function Header() {
-  const [activeSection, setActiveSection] = useState("Home");
+  const { activeSection, setActiveSection, lastClickTime, setlastClickTime } =
+    useActiveSectionContext();
   return (
     <header className="z-[999] relative">
       <motion.div
@@ -25,11 +26,14 @@ export default function Header() {
             >
               <a
                 className={clsx(
-                  "flex w-full items-center justify-center p-3 transition",
+                  "flex w-full items-center justify-center p-2 transition",
                   { "text-white": activeSection === link.name }
                 )}
                 href={link.hash}
-                onClick={() => setActiveSection(link.name)}
+                onClick={() => {
+                  setlastClickTime(Date.now());
+                  setActiveSection(link.name);
+                }}
               >
                 {link.name}
                 {link.name === activeSection && (

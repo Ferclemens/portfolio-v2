@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/*Fix log error from timeline library and use client component*/
+html {
+  --line-color: #21414d;
+}
