@@ -1,14 +1,15 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
-import { BsArrowRight } from "react-icons/bs";
+import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import Link from "next/link";
 import { HiDownload } from "react-icons/hi";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { useInView } from "react-intersection-observer";
 import { useSectionInView } from "@/lib/hooks";
+import { FaGithubSquare } from "react-icons/fa";
 
 export default function Intro() {
   const { setlastClickTime, setActiveSection } = useActiveSectionContext();
@@ -16,7 +17,7 @@ export default function Intro() {
   return (
     <section
       ref={ref}
-      className="flex items-center justify-center py-32 mx-7 flex-col-reverse sm:flex-row sm:mx-10 sm:py-20 lg:py-24"
+      className="flex items-center justify-center py-32 mx-7 flex-col-reverse sm:flex-row sm:mx-10 sm:py-20 lg:py-28 scroll-mt-32"
       id="home"
     >
       <motion.div
@@ -36,7 +37,7 @@ export default function Intro() {
         />
       </motion.div>
       <motion.div
-        className="text-gray-700 flex flex-col sm:p-4 lg:p-8"
+        className="flex flex-col sm:p-4 lg:p-8"
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{
@@ -68,7 +69,7 @@ export default function Intro() {
         <div className="flex gap-1 sm:gap-3 lg:gap-4  items-center text-center sm:max-w-[28rem] lg:max-w-[30rem]">
           <Link
             href="#contact"
-            className="flex items-center justify-center gap-2 p-2 w-30 sm:w-36 lg:w-40 bg-[#21414d] rounded-full text-xs sm:text-sm lg:text-lg text-white hover:scale-105 transition"
+            className="flex items-center justify-center gap-2 p-2 py-3 w-30 sm:w-36 lg:w-40 bg-[#21414d]/80 rounded-full text-xs sm:text-sm lg:text-lg text-white hover:scale-105 transition dark:bg-[#377388]"
             onClick={() => {
               setlastClickTime(Date.now());
               setActiveSection("Contact");
@@ -79,27 +80,23 @@ export default function Intro() {
           <a
             href="/ferclemens-cv.pdf"
             download
-            className="flex items-center justify-center gap-2 p-2 w-30 sm:w-36 lg:w-40 bg-gray-500 rounded-full text-xs sm:text-sm lg:text-lg text-white hover:scale-105 transition"
+            className="flex items-center justify-center gap-2 p-2 py-3 w-30 sm:w-36 lg:w-40 bg-gray-500/50 rounded-full text-xs sm:text-sm lg:text-lg text-white hover:scale-105 transition dark:bg-white/10"
           >
             Dowload CV <HiDownload className="" />
           </a>
-          <a href="https://www.linkedin.com/in/foclemens/" target="_blank">
-            <Image
-              src="/linkedin-logo.webp"
-              alt="LinkedIn logo"
-              width={30}
-              height={30}
-              className="hover:scale-110 transition"
-            />
+          <a
+            className="bg-white/60 p-2 text-gray-700/60 hover:text-gray-950 flex items-center text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer dark:bg-white/10 dark:text-white/60"
+            href="https://www.linkedin.com/in/foclemens/"
+            target="_blank"
+          >
+            <BsLinkedin />
           </a>
-          <a href="https://github.com/Ferclemens" target="_blank">
-            <Image
-              src="/github-mark.svg"
-              alt="GitHub logo"
-              width={32}
-              height={32}
-              className="hover:scale-125 transition"
-            />
+          <a
+            className="bg-white/60 p-2 text-gray-700/60 flex items-center text-[1.5rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
+            href="https://github.com/Ferclemens"
+            target="_blank"
+          >
+            <FaGithubSquare />
           </a>
         </div>
       </motion.div>

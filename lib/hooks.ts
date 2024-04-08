@@ -12,7 +12,7 @@ export function useSectionInView(section: SectionName) {
   });
 
   useEffect(() => {
-    if (inView && Date.now() - lastClickTime > 1000) {
+    if (inView && Date.now() - lastClickTime > 500) {
       setActiveSection(section);
     }
   }, [inView, setActiveSection, lastClickTime]);
