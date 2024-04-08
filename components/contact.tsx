@@ -15,7 +15,7 @@ export default function Contact() {
   return (
     <section
       ref={ref}
-      className="flex flex-col items-center justify-center scroll-mt-40 mx-7 my-28 sm:mx-10  lg:my-32"
+      className="flex flex-col items-center justify-center scroll-mt-40 lg:scroll-mt-20 sm:scroll-mt-16 mx-7 my-28 sm:mx-10  lg:my-32"
       id="contact"
     >
       <SectionHeading>Contact</SectionHeading>
@@ -37,7 +37,7 @@ export default function Contact() {
           }
           toast.success("Email sent successfully!");
         }}
-        className="flex flex-col gap-4 mt-10 w-full sm:max-w-[26rem]"
+        className="flex flex-col gap-4 mt-10 w-full sm:max-w-[25rem]"
       >
         <input
           className="h-10 rounded-lg p-3 focus:outline-[#21414d]"

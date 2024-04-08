@@ -13,7 +13,7 @@ export default function About() {
     <motion.section
       ref={ref}
       id="about"
-      className="flex items-center justify-center scroll-mt-40 mx-7 my-28 sm:mx-10  lg:my-32"
+      className="flex items-center justify-center scroll-mt-40 lg:scroll-mt-40 sm:scroll-mt-16 mx-7 my-28 sm:mx-10 sm:my-8 lg:my-32"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.17 }}

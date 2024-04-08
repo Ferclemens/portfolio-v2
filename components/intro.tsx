@@ -17,7 +17,7 @@ export default function Intro() {
   return (
     <section
       ref={ref}
-      className="flex items-center justify-center py-32 mx-7 flex-col-reverse sm:flex-row sm:mx-10 sm:py-20 lg:py-24"
+      className="flex items-center justify-center py-32 mx-7 flex-col-reverse sm:flex-row sm:mx-10 sm:py-20 lg:py-28 scroll-mt-32"
       id="home"
     >
       <motion.div
