@@ -5,7 +5,9 @@ import { FaPaperPlane } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { useSectionInView } from "@/lib/hooks";
-import { sendEmail } from "@/actions/sendEmail";
+import { sendEmail } from "../actions/sendEmail";
+import SubmitBtn from "./submit-btn";
+import toast from "react-hot-toast";
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
@@ -25,7 +27,16 @@ export default function Contact() {
         or through this form.
       </p>
       <form
-        action={sendEmail}
+        action={async (formData) => {
+          const { data, error } = await sendEmail(formData);
+          console.log(error);
+
+          if (error) {
+            toast.error(error);
+            return;
+          }
+          toast.success("Email sent successfully!");
+        }}
         className="flex flex-col gap-4 mt-10 w-full sm:max-w-[26rem]"
       >
         <input
@@ -43,12 +54,7 @@ export default function Contact() {
           maxLength={800}
           name="message"
         ></textarea>
-        <button
-          className="h-12 w-full bg-[#21414d] hover:bg-[#32748c] active:scale-95 disabled:scale-100 disabled:bg-[#21414d] transition text-white rounded-lg flex justify-center items-center gap-4"
-          type="submit"
-        >
-          Submit <FaPaperPlane />
-        </button>
+        <SubmitBtn />
       </form>
     </section>
   );

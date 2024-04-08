@@ -20,7 +20,7 @@ export default function About() {
     >
       <div className="text-lg sm:text-xl text-center p-8 max-w-lg sm:max-w-2xl">
         <SectionHeading>About Me</SectionHeading>
-        <p className="text-gray-700">
+        <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat a
           nobis modi. Aliquam nam, distinctio eos itaque qui, nostrum
           blanditiis, reprehenderit ad quisquam voluptas ratione recusandae esse

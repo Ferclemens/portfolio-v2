@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { links } from "@/lib/data";
 import clsx from "clsx";
 import { useActiveSectionContext } from "@/context/active-section-context";
+import ThemeBtn from "./theme-btn";
 
 export default function Header() {
   const { activeSection, setActiveSection, lastClickTime, setlastClickTime } =
@@ -52,6 +53,7 @@ export default function Header() {
           ))}
         </ul>
       </nav>
+      <ThemeBtn />
     </header>
   );
 }

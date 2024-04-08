@@ -36,7 +36,7 @@ export default function Intro() {
         />
       </motion.div>
       <motion.div
-        className="text-gray-700 flex flex-col sm:p-4 lg:p-8"
+        className="flex flex-col sm:p-4 lg:p-8"
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{
