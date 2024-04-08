@@ -6,7 +6,7 @@ export default function SubmitBtn() {
   const { pending } = useFormStatus();
   return (
     <button
-      className="h-12 w-full bg-[#21414d] hover:bg-[#32748c] active:scale-95 disabled:scale-100 disabled:bg-[#21414d] transition text-white rounded-lg flex justify-center items-center gap-4"
+      className="h-12 w-full bg-[#21414d] hover:bg-[#32748c] active:scale-95 disabled:scale-100 disabled:bg-[#21414d] transition text-white rounded-lg flex justify-center items-center gap-4 dark:bg-[#377388]"
       type="submit"
       disabled={pending}
     >

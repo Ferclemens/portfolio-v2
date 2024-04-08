@@ -10,14 +10,16 @@ import { experiencesData } from "@/lib/data";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { useInView } from "react-intersection-observer";
 import { useSectionInView } from "@/lib/hooks";
+import { useTheme } from "@/context/theme-context";
 
 export default function Experience() {
   const { ref } = useSectionInView("Experience");
+  const { theme } = useTheme();
   return (
     <section
       ref={ref}
       id="experience"
-      className="scroll-mt-40 mx-7 my-32 sm:mx-10"
+      className="scroll-mt-40 mx-7 my-32 sm:mx-10 text-gray-750 dark:text-gray-200"
     >
       <SectionHeading>Experience</SectionHeading>
       <div>
@@ -27,7 +29,8 @@ export default function Experience() {
               <VerticalTimelineElement
                 visible={true}
                 contentStyle={{
-                  background: "#f3f4f6",
+                  background:
+                    theme === "light" ? "#f3f4f6" : "rgba(255, 255, 255, 0.15)",
                 }}
                 contentArrowStyle={{
                   borderRight: "0.6rem solid #21414d",
@@ -35,7 +38,8 @@ export default function Experience() {
                 date={data.date}
                 icon={data.icon}
                 iconStyle={{
-                  background: "#f3f4f6",
+                  background:
+                    theme === "light" ? "#f3f4f6" : "rgba(55, 73, 95)",
                 }}
               >
                 <h3>{data.title}</h3>
