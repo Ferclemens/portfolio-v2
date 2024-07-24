@@ -7,7 +7,7 @@ import { useActiveSectionContext } from "@/context/active-section-context";
 import { useSectionInView } from "@/lib/hooks";
 
 export default function About() {
-  const { ref } = useSectionInView("About");
+  const { ref } = useSectionInView("Acerca de");
 
   return (
     <motion.section
@@ -19,13 +19,12 @@ export default function About() {
       transition={{ delay: 0.17 }}
     >
       <div className="text-lg sm:text-xl text-center p-8 max-w-lg sm:max-w-2xl">
-        <SectionHeading>About Me</SectionHeading>
+        <SectionHeading>Acerca de Mi</SectionHeading>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat a
-          nobis modi. Aliquam nam, distinctio eos itaque qui, nostrum
-          blanditiis, reprehenderit ad quisquam voluptas ratione recusandae esse
-          possimus asperiores id. Aliquam nam, distinctio eos itaque qui,
-          nostrum blanditiis, reprehenderit.
+          Estudiante de Tecnicatura en desarrollo de software, Con experiencia
+          en creación de aplicaciones web. Empático, responsable y curioso.
+          Predispuesto a nuevos desafíos para poner en práctica lo aprendido,
+          conocer colegas y seguir desarrollando mi carrera en el mundo IT.
         </p>
       </div>
     </motion.section>

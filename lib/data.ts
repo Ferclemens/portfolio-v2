@@ -2,21 +2,22 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import corpcommentImg from "@/public/corpcomment.png";
-import rmtdevImg from "@/public/rmtdev.png";
-import wordanalyticsImg from "@/public/wordanalytics.png";
+import remembaappImg from "@/public/remembaapp.png";
+import awesomecolorschemepickerImg from "@/public/awesomecolorschemepicker.png";
+import varsityraptorImg from "@/public/varsityraptor.png";
+import encriptadorImg from "@/public/encriptador.png";
 
 export const links = [
   {
-    name: "Home",
+    name: "Inicio",
     hash: "#home",
   },
   {
-    name: "About",
+    name: "Acerca de",
     hash: "#about",
   },
   {
-    name: "Projects",
+    name: "Projectos",
     hash: "#projects",
   },
   {
@@ -24,63 +25,85 @@ export const links = [
     hash: "#skills",
   },
   {
-    name: "Experience",
+    name: "Experiencia",
     hash: "#experience",
   },
   {
-    name: "Contact",
+    name: "Contacto",
     hash: "#contact",
   },
 ] as const;
 
 export const experiencesData = [
   {
-    title: "Graduated bootcamp",
-    location: "Miami, FL",
+    title: "SkillFactory",
     description:
-      "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
-    icon: React.createElement(LuGraduationCap),
-    date: "2019",
-  },
-  {
-    title: "Front-End Developer",
-    location: "Orlando, FL",
-    description:
-      "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
-    icon: React.createElement(CgWorkAlt),
-    date: "2019 - 2021",
-  },
-  {
-    title: "Full-Stack Developer",
-    location: "Houston, TX",
-    description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
+      "Bootcamp de la empresa Avalith para la creación de interfaces de usuario dinámicas usando React y Firebase como base de datos.",
     icon: React.createElement(FaReact),
-    date: "2021 - present",
+    date: "2022",
+  },
+  {
+    title: "Informatorio",
+    description:
+      "Bootcamp de desarrollo Backend usando Java y SpringBoot. Entrenamiento en testing manual y exploración de webs, desarrollo de historias de usuario, casos de prueba y reporte de bugs.",
+    icon: React.createElement(CgWorkAlt),
+    date: "2023",
+  },
+  {
+    title: "Frontend Career Path",
+    description:
+      "Curso completo de Frontend en plataforma Scrimba. Creación de interfaces de usuario responsive, funcionales y estilizadas utilizando HTML, CSS, Javascript y React.",
+    icon: React.createElement(FaReact),
+    date: "2024",
+  },
+  {
+    title: "Tecnicatura en desarrollo de software",
+    description:
+      "Estudiante de 1º año de 'Tecnicatura Superior en desarrollo de software' dictada por el Instituto de Formación Técnica Superior Nº 29 (CABA) de forma remota.",
+    icon: React.createElement(LuGraduationCap),
+    date: "2024",
+  },
+  {
+    title: "Oracle Alura Latam G7 - XAcademy QA",
+    description:
+      "Actualmente formo parte del grupo G7 del bootcamp ORACLE - Alura Latam sobre desarrollo web. También presente en el grupo 2024 de XAcademy QA sobre calidad de software.",
+    icon: React.createElement(LuGraduationCap),
+    date: "2024",
   },
 ] as const;
 
 export const projectsData = [
   {
-    title: "CorpComment",
+    title: "Varsity Raptor",
     description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
-    imageUrl: corpcommentImg,
+      "Landing page del emprendimiento Varsity Raptor. Empresa dedicada al Marketing digital y posicionamiento web.",
+    tags: ["React", "Vite", "Tailwind", "i18n"],
+    imageUrl: varsityraptorImg,
+    link: "https://varsityraptor.com/",
   },
   {
-    title: "rmtDev",
+    title: "Rememba app",
     description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
-    imageUrl: rmtdevImg,
+      "Una App para anotar y persistir información como una lista de supermercado o tareas a realizar.",
+    tags: ["HTML", "CSS", "Javascript", "Vite", "Testing"],
+    imageUrl: remembaappImg,
+    link: "https://rememba-app.netlify.app/",
   },
   {
-    title: "Word Analytics",
+    title: "Awesome color scheme picker",
     description:
-      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
-    imageUrl: wordanalyticsImg,
+      "App de selección y recomendación de paletas de colores. Funciona con la API de https://www.thecolorapi.com/ ",
+    tags: ["HTML", "CSS", "Javascript", "Vite"],
+    imageUrl: awesomecolorschemepickerImg,
+    link: "https://awesome-color-scheme-picker.netlify.app/",
+  },
+  {
+    title: "Encriptador de texto",
+    description:
+      "App para encriptar y desencriptar mensajes. Desafio de ORACLE Alura Latam - G7",
+    tags: ["HTML", "CSS", "Javascript"],
+    imageUrl: encriptadorImg,
+    link: "https://ferclemens.github.io/encriptador-de-texto/",
   },
 ] as const;
 
@@ -94,14 +117,7 @@ export const skillsData = [
   "Node.js",
   "Git",
   "Tailwind",
-  "Prisma",
-  "MongoDB",
-  "Redux",
-  "GraphQL",
-  "Apollo",
   "Express",
-  "PostgreSQL",
-  "Python",
-  "Django",
+  "MySQL",
   "Framer Motion",
 ] as const;

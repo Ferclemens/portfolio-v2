@@ -14,7 +14,7 @@ export default function SubmitBtn() {
         <div className="w-5 h-5 pr-2 animate-spin rounded-full border-b-2 border-white"></div>
       ) : (
         <>
-          Submit <FaPaperPlane />
+          Enviar <FaPaperPlane />
         </>
       )}
     </button>

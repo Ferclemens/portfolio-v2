@@ -7,9 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "cypress open"
+    "test": "cypress open",
+    "cypress run": "cypress run"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@react-email/components": "^0.0.16",
     "@react-email/tailwind": "^0.0.15",
     "clsx": "^2.1.0",
