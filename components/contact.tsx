@@ -10,21 +10,21 @@ import SubmitBtn from "./submit-btn";
 import toast from "react-hot-toast";
 
 export default function Contact() {
-  const { ref } = useSectionInView("Contact");
+  const { ref } = useSectionInView("Contacto");
 
   return (
     <section
       ref={ref}
-      className="flex flex-col items-center justify-center scroll-mt-40 lg:scroll-mt-20 sm:scroll-mt-16 mx-7 my-28 sm:mx-10  lg:my-32"
+      className="flex flex-col items-center justify-center scroll-mt-40 lg:scroll-mt-20 sm:scroll-mt-16 mx-7 my-28 sm:mx-10  lg:my-32 "
       id="contact"
     >
-      <SectionHeading>Contact</SectionHeading>
+      <SectionHeading>Contacto</SectionHeading>
       <p>
-        Contact me directly at{" "}
+        Contáctame directamente en{" "}
         <a className="underline" href="mailto:foclemens@gmail.com">
           foclemens@gmail.com
         </a>{" "}
-        or through this form.
+        o a través de este formulario.
       </p>
       <form
         action={async (formData) => {
@@ -35,21 +35,21 @@ export default function Contact() {
             toast.error(error);
             return;
           }
-          toast.success("Email sent successfully!");
+          toast.success("Email enviado!");
         }}
-        className="flex flex-col gap-4 mt-10 w-full sm:max-w-[25rem]"
+        className="flex flex-col gap-4 mt-10 w-full sm:max-w-[25rem] dark:text-gray-800"
       >
         <input
           className="h-10 rounded-lg p-3 focus:outline-[#21414d]"
           type="email"
-          placeholder="your mail"
+          placeholder="Tu mail"
           required
           maxLength={100}
           name="email"
         />
         <textarea
           className="h-40 rounded-lg p-3 focus:outline-[#21414d]"
-          placeholder="your message"
+          placeholder="Mensaje"
           required
           maxLength={800}
           name="message"

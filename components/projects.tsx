@@ -9,16 +9,16 @@ import { useActiveSectionContext } from "@/context/active-section-context";
 import { useSectionInView } from "@/lib/hooks";
 
 export default function Projects() {
-  const { ref } = useSectionInView("Projects");
+  const { ref } = useSectionInView("Projectos");
   return (
     <section
       ref={ref}
       className="flex flex-col justify-center items-center scroll-mt-40 sm:scroll-mt-20 mx-7 sm:mx-10  sm:my-28 lg:scroll-mt-32"
       id="projects"
     >
-      <SectionHeading>Projects</SectionHeading>
+      <SectionHeading>Proyectos</SectionHeading>
       <p className="text-lg sm:text-xl text-center pb-8">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Algunos trabajos desarrollados.
       </p>
       <div className="flex flex-col gap-y-3">
         {projectsData.map((project, index) => (
@@ -32,7 +32,7 @@ export default function Projects() {
 }
 type ProjectProps = (typeof projectsData)[number];
 
-function Project({ title, description, tags, imageUrl }: ProjectProps) {
+function Project({ title, description, tags, imageUrl, link }: ProjectProps) {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -47,22 +47,24 @@ function Project({ title, description, tags, imageUrl }: ProjectProps) {
         opacity: scrollYProgress,
       }}
     >
-      <div className="p-4 w-full sm:max-w-[50%] sm:h-full flex flex-col justify-center">
-        <h3 className="text-xl font-semibold my-3">{title}</h3>
-        <p className="text-gray-700 mb-4">{description}</p>
-        <ul className="flex flex-wrap my-4 gap-2">
-          {tags.map((tag, index) => {
-            return (
-              <li
-                className="bg-gray-500 px-3 py-2 text-[0.8rem] tracking-wider text-white rounded-full"
-                key={index}
-              >
-                {tag}
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+      <a href={link} target="_blank">
+        <div className="p-4 w-full sm:max-w-[50%] sm:h-full flex flex-col justify-center dark:text-gray-800">
+          <h3 className="text-xl font-semibold my-3">{title}</h3>
+          <p className="text-gray-700 mb-4">{description}</p>
+          <ul className="flex flex-wrap my-4 gap-2">
+            {tags.map((tag, index) => {
+              return (
+                <li
+                  className="bg-gray-500 px-3 py-2 text-[0.8rem] tracking-wider text-white rounded-full"
+                  key={index}
+                >
+                  {tag}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </a>
       <Image
         src={imageUrl}
         alt={title}

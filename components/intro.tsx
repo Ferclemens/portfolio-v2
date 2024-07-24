@@ -13,11 +13,11 @@ import { FaGithubSquare } from "react-icons/fa";
 
 export default function Intro() {
   const { setlastClickTime, setActiveSection } = useActiveSectionContext();
-  const { ref } = useSectionInView("Home");
+  const { ref } = useSectionInView("Inicio");
   return (
     <section
       ref={ref}
-      className="flex items-center justify-center py-32 mx-7 flex-col-reverse sm:flex-row sm:mx-10 sm:py-20 lg:py-28 scroll-mt-32"
+      className="flex items-center justify-center py-32 mx-7 flex-col-reverse lg:flex-row sm:mx-7 sm:py-20 lg:py-28 scroll-mt-32"
       id="home"
     >
       <motion.div
@@ -30,14 +30,14 @@ export default function Intro() {
       >
         <Image
           src="/avatar.png"
-          alt="Cartoon image to presentation"
+          alt="Presentation Cartoon image. A developer like Simpson's style"
           width={300}
           height={300}
           className="pt-10 sm:p-4 lg:p-0"
         />
       </motion.div>
       <motion.div
-        className="flex flex-col sm:p-4 lg:p-8"
+        className="flex flex-col sm:p-4 lg:p-8 lg:min-w-[530px]"
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{
@@ -45,14 +45,14 @@ export default function Intro() {
           duration: 0.2,
         }}
       >
-        <h1 className="text-4xl lg:text-6xl font-bold">
-          Hello! I'm <br />
+        <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold">
+          Hola! Soy <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-400">
             <TypeAnimation
               sequence={[
                 // Same substring at the start will only be typed out once, initially
                 "Fernando",
-                1000, // wait 1s before replacing "Mice" with "Hamsters"
+                1000, // wait 1s before replacing "Fernando" with "Web developer"
                 "Web developer",
                 1000,
               ]}
@@ -63,8 +63,7 @@ export default function Intro() {
           </span>
         </h1>
         <p className="text-lg sm:text-xl py-7 sm:py-5 lg:py-8 max-w-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia fugiat
-          ipsum!
+          En camino a ser FullStack Javascript
         </p>
         <div className="flex gap-1 sm:gap-3 lg:gap-4  items-center text-center sm:max-w-[28rem] lg:max-w-[30rem]">
           <Link
@@ -72,17 +71,17 @@ export default function Intro() {
             className="flex items-center justify-center gap-2 p-2 py-3 w-30 sm:w-36 lg:w-40 bg-[#21414d]/80 rounded-full text-xs sm:text-sm lg:text-lg text-white hover:scale-105 transition dark:bg-[#377388]"
             onClick={() => {
               setlastClickTime(Date.now());
-              setActiveSection("Contact");
+              setActiveSection("Contacto");
             }}
           >
-            Contact Me <BsArrowRight className="" />
+            Contacto <BsArrowRight className="" />
           </Link>
           <a
             href="/ferclemens-cv.pdf"
             download
             className="flex items-center justify-center gap-2 p-2 py-3 w-30 sm:w-36 lg:w-40 bg-gray-500/50 rounded-full text-xs sm:text-sm lg:text-lg text-white hover:scale-105 transition dark:bg-white/10"
           >
-            Dowload CV <HiDownload className="" />
+            Descargar CV <HiDownload className="" />
           </a>
           <a
             className="bg-white/60 p-2 text-gray-700/60 hover:text-gray-950 flex items-center text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer dark:bg-white/10 dark:text-white/60"
