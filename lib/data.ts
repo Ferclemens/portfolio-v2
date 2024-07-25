@@ -6,6 +6,7 @@ import remembaappImg from "@/public/remembaapp.png";
 import awesomecolorschemepickerImg from "@/public/awesomecolorschemepicker.png";
 import varsityraptorImg from "@/public/varsityraptor.png";
 import encriptadorImg from "@/public/encriptador.png";
+import tablesandchartsImg from "@/public/tablesandcharts.png";
 
 export const links = [
   {
@@ -104,6 +105,14 @@ export const projectsData = [
     tags: ["HTML", "CSS", "Javascript"],
     imageUrl: encriptadorImg,
     link: "https://ferclemens.github.io/encriptador-de-texto/",
+  },
+  {
+    title: "Tables and charts app",
+    description:
+      "App para importar archivo csv y desplegar gráficos de análisis con los datos cargados.",
+    tags: ["Vite", "React-Table", "Xlsx", "Chart.js", "Chakra UI"],
+    imageUrl: tablesandchartsImg,
+    link: "https://tables-and-charts-app.vercel.app/",
   },
 ] as const;
 
