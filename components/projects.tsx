@@ -9,7 +9,7 @@ import { useActiveSectionContext } from "@/context/active-section-context";
 import { useSectionInView } from "@/lib/hooks";
 
 export default function Projects() {
-  const { ref } = useSectionInView("Projectos");
+  const { ref } = useSectionInView("Proyectos");
   return (
     <section
       ref={ref}

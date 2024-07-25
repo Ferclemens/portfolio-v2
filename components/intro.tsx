@@ -77,7 +77,7 @@ export default function Intro() {
             Contacto <BsArrowRight className="" />
           </Link>
           <a
-            href="/ferclemens-cv.pdf"
+            href="/CV_Clemens_Fernando_Oscar.pdf"
             download
             className="flex items-center justify-center gap-2 p-2 py-3 w-30 sm:w-36 lg:w-40 bg-gray-500/50 rounded-full text-xs sm:text-sm lg:text-lg text-white hover:scale-105 transition dark:bg-white/10"
           >
