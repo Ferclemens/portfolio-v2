@@ -8,7 +8,7 @@ export function useSectionInView(section: SectionName) {
     useActiveSectionContext();
 
   const { ref, inView } = useInView({
-    threshold: 0.25,
+    threshold: 0.2,
   });
 
   useEffect(() => {

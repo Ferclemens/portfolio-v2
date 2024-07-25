@@ -7,7 +7,7 @@ import { useActiveSectionContext } from "@/context/active-section-context";
 import { useSectionInView } from "@/lib/hooks";
 
 export default function About() {
-  const { ref } = useSectionInView("Acerca de");
+  const { ref } = useSectionInView("Info");
 
   return (
     <motion.section
