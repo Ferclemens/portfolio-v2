@@ -10,6 +10,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: set_env
-        uses: Ferclemens/portfolio-v2@main
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
