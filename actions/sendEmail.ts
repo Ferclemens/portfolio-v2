@@ -9,6 +9,8 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export const sendEmail = async (formData: FormData) => {
   const email = formData.get("email");
   const message = formData.get("message");
+  console.log("email: ", email, "msj: ", message);
+
   if (!validateString(email, 100)) {
     return {
       error: "invalid email",
@@ -25,7 +27,6 @@ export const sendEmail = async (formData: FormData) => {
       from: "onboarding@resend.dev",
       to: "foclemens@gmail.com",
       subject: "Message from Portfolio Contact form",
-      reply_to: email as string,
       react: React.createElement(ContactFormEmail, {
         message: message as string,
         senderEmail: email as string,
