@@ -8,7 +8,9 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
     steps:
       - name: set_env
-        env:
-          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+      - uses: Ferclemens/portfolio-v2@main
+        
