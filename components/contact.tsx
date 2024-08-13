@@ -1,16 +1,32 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import SectionHeading from "./section-heading";
-import { FaPaperPlane } from "react-icons/fa";
-import { useInView } from "react-intersection-observer";
-import { useActiveSectionContext } from "@/context/active-section-context";
 import { useSectionInView } from "@/lib/hooks";
-import { sendEmail } from "../actions/sendEmail";
 import SubmitBtn from "./submit-btn";
 import toast from "react-hot-toast";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const { ref } = useSectionInView("Contacto");
+
+  const form: any = useRef();
+
+  const sendEmail = (e: any) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("service_s3w9999", "template_t7631ql", form.current, {
+        publicKey: "nEs5zVUlEH70bVKDI",
+      })
+      .then(
+        () => {
+          toast.success("Email enviado!");
+        },
+        (error) => {
+          toast.error(error);
+        }
+      );
+  };
 
   return (
     <section
@@ -27,16 +43,8 @@ export default function Contact() {
         o a través de este formulario.
       </p>
       <form
-        action={async (formData) => {
-          const { data, error } = await sendEmail(formData);
-          console.log(error);
-
-          if (error) {
-            toast.error(error);
-            return;
-          }
-          toast.success("Email enviado!");
-        }}
+        ref={form}
+        onSubmit={sendEmail}
         className="flex flex-col gap-4 mt-10 w-full sm:max-w-[25rem] dark:text-gray-800"
       >
         <input
@@ -45,7 +53,7 @@ export default function Contact() {
           placeholder="Tu mail"
           required
           maxLength={100}
-          name="email"
+          name="user_email"
         />
         <textarea
           className="h-40 rounded-lg p-3 focus:outline-[#21414d]"
