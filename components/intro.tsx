@@ -63,7 +63,7 @@ export default function Intro() {
           </span>
         </h1>
         <p className="text-lg sm:text-xl py-7 sm:py-5 lg:py-8 max-w-lg">
-          En camino a ser FullStack Javascript
+          En camino a ser desarrollador de software
         </p>
         <div className="flex gap-1 sm:gap-3 lg:gap-4  items-center text-center sm:max-w-[28rem] lg:max-w-[30rem]">
           <Link
