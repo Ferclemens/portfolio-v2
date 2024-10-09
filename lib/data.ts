@@ -2,6 +2,7 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
+import { BsDatabaseCheck } from "react-icons/bs";
 import remembaappImg from "@/public/remembaapp.png";
 import awesomecolorschemepickerImg from "@/public/awesomecolorschemepicker.png";
 import varsityraptorImg from "@/public/varsityraptor.png";
@@ -37,13 +38,6 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "SkillFactory",
-    description:
-      "Bootcamp de la empresa Avalith para la creación de interfaces de usuario dinámicas usando React y Firebase como base de datos.",
-    icon: React.createElement(FaReact),
-    date: "2022",
-  },
-  {
     title: "Informatorio",
     description:
       "Bootcamp de desarrollo Backend usando Java y SpringBoot. Entrenamiento en testing manual y exploración de webs, desarrollo de historias de usuario, casos de prueba y reporte de bugs.",
@@ -71,6 +65,13 @@ export const experiencesData = [
     icon: React.createElement(LuGraduationCap),
     date: "2024",
   },
+  {
+    title: "Microsoft Certified: Power BI Data Analyst Associate",
+    description:
+      "curso autoasistido sobre métodos y procedimientos para modelar, visualizar y analizar datos con Microsoft Power BI.",
+    icon: React.createElement(BsDatabaseCheck),
+    date: "2024",
+  },
 ] as const;
 
 export const projectsData = [
@@ -80,7 +81,8 @@ export const projectsData = [
       "Landing page del emprendimiento Varsity Raptor. Empresa dedicada al Marketing digital y posicionamiento web.",
     tags: ["React", "Vite", "Tailwind", "i18n"],
     imageUrl: varsityraptorImg,
-    link: "https://varsityraptor.com/",
+    //link: "https://varsityraptor.com/",
+    link: "https://varsityraptor.netlify.app/",
   },
   {
     title: "Rememba app",
@@ -128,5 +130,5 @@ export const skillsData = [
   "Tailwind",
   "Express",
   "MySQL",
-  "Framer Motion",
+  "Python",
 ] as const;
