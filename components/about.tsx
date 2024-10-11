@@ -21,7 +21,7 @@ export default function About() {
       <div className="text-lg sm:text-xl text-center p-8 max-w-lg sm:max-w-2xl">
         <SectionHeading>Acerca de Mi</SectionHeading>
         <p>
-          Estudiante de Tecnicatura en desarrollo de software, Con experiencia
+          Estudiante de Tecnicatura en desarrollo de software, con experiencia
           en creación de aplicaciones web. Empático, responsable y curioso.
           Predispuesto a nuevos desafíos para poner en práctica lo aprendido,
           conocer colegas y seguir desarrollando mi carrera en el mundo IT.
